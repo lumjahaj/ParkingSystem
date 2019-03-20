@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b61f463a-b8c0-4566-beb1-06d99a0aace1">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" forecolor="#FFFFFF" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     Automjeti."NrTarges" AS Automjeti_NrTarges,
+     Automjeti."TipiAutomjetitID" AS Automjeti_TipiAutomjetitID,
+     Automjeti."NgjyraAutomjetitID" AS Automjeti_NgjyraAutomjetitID,
+     Automjeti."LlojiNgjyresID" AS Automjeti_LlojiNgjyresID,
+     Automjeti."KategoriaAutomjetitID" AS Automjeti_KategoriaAutomjetitID
+FROM
+     "dbo"."Automjeti" Automjeti]]>
+	</queryString>
+	<field name="Automjeti_NrTarges" class="java.lang.String"/>
+	<field name="Automjeti_TipiAutomjetitID" class="java.lang.Integer"/>
+	<field name="Automjeti_NgjyraAutomjetitID" class="java.lang.Integer"/>
+	<field name="Automjeti_LlojiNgjyresID" class="java.lang.Integer"/>
+	<field name="Automjeti_KategoriaAutomjetitID" class="java.lang.Integer"/>
+	<group name="Automjeti_NrTarges">
+		<groupExpression><![CDATA[$F{Automjeti_NrTarges}]]></groupExpression>
+		<groupHeader>
+			<band height="40">
+				<textField>
+					<reportElement style="SubTitle" x="47" y="13" width="506" height="24" forecolor="#333333" uuid="edb1d3fa-00a3-4c43-a370-161050849377"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{Automjeti_NrTarges}]]></textFieldExpression>
+				</textField>
+				<rectangle>
+					<reportElement mode="Opaque" x="0" y="13" width="36" height="24" forecolor="#CCCCCC" backcolor="#CCCCCC" uuid="f7bf9a3e-41f0-418a-9007-026119d9e894"/>
+				</rectangle>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="6"/>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="70" splitType="Stretch">
+			<image>
+				<reportElement x="-20" y="0" width="595" height="64" uuid="2ab05572-42ba-4c2d-896f-9d9d61a8050b"/>
+				<imageExpression><![CDATA["wood.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement style="Title" x="0" y="5" width="276" height="33" uuid="c5f39769-c9a2-48ea-9d60-481fa2024fd8"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Raporti i Automjeteve]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="-20" y="38" width="244" height="22" forecolor="#FFFFFF" uuid="6ff97b84-6420-4f05-a0b9-e759b47fb731"/>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[Parking System Managment]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="36" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="35" width="555" height="1" uuid="a358ac01-863f-41b3-ac96-f53ccd39d89f"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="0" y="19" width="138" height="15" uuid="74d28d35-d332-444d-bcc2-98d3e3651d94"/>
+				<text><![CDATA[Tipi Automjetit]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="138" y="19" width="138" height="15" uuid="7b639e8a-e3d6-41e1-b48c-832a71c18f7c"/>
+				<text><![CDATA[Ngjyra Automjetit]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="276" y="19" width="138" height="15" uuid="d54f11dc-9c36-4898-9e8b-57321b4c13b9"/>
+				<text><![CDATA[Lloji Ngjyres]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="414" y="19" width="138" height="15" uuid="c02fd52e-b424-4f1d-b32f-7ada336220a8"/>
+				<text><![CDATA[Kategoria Automjetit]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="16" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="555" height="1" uuid="6e463df6-0063-4548-866a-3a7b9fdb2742"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement style="Detail" x="0" y="0" width="138" height="15" uuid="54128b9b-a737-4568-892c-ad07c7cb1827"/>
+				<textFieldExpression><![CDATA[$F{Automjeti_TipiAutomjetitID}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="138" y="0" width="138" height="15" uuid="f14bd298-cf30-4276-a4cd-f1f4fa15e5f5"/>
+				<textFieldExpression><![CDATA[$F{Automjeti_NgjyraAutomjetitID}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="276" y="0" width="138" height="15" uuid="25ed58dc-e480-4feb-811a-7da3f5fe0a2b"/>
+				<textFieldExpression><![CDATA[$F{Automjeti_LlojiNgjyresID}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="414" y="0" width="138" height="15" uuid="2c5ad2e0-cd1e-4b78-8a28-88c48dde7a9d"/>
+				<textFieldExpression><![CDATA[$F{Automjeti_KategoriaAutomjetitID}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="5138ff2f-a83b-429d-b637-c18c8bf85089"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement style="Column header" x="433" y="0" width="80" height="20" uuid="0696c22a-b0e5-4a90-8c63-3b9764953c5c"/>
+				<textElement textAlignment="Right">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement style="Column header" x="513" y="0" width="40" height="20" uuid="fdd7e021-9e4a-4c73-9385-299d6dc4d7f7"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement style="Column header" x="0" y="0" width="197" height="20" uuid="c7ca1bd8-da88-4f08-8e73-336624fe4fc0"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
